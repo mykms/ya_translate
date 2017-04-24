@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="0dp"
+    tools:context="translate.yandex.ru.translate.MainActivity">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="0dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1">
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="0.4"
+                android:id="@+id/spinner_left"
+                android:background="@color/colorPrimary"
+                android:popupBackground="@color/colorPrimary" />
+
+            <Button
+                android:id="@+id/reversebutton"
+                android:text="@string/reverse"
+                android:layout_height="40dp"
+                android:layout_width="wrap_content"
+                android:layout_weight="0.2"
+                android:background="@color/colorPrimary"
+                android:onClick="OnClick_ButtonReversLang" />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="0.4"
+                android:id="@+id/spinner_right"
+                android:background="@color/colorPrimary"
+                android:popupBackground="@color/colorPrimary"
+                android:gravity="center_vertical" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:minHeight="90dp"
+                android:ems="10"
+                android:gravity="top"
+                android:layout_margin="10dp"
+                android:background="@drawable/edittextstyle"
+                android:id="@+id/editText"
+                android:drawableBottom="@drawable/ic_clear"
+                android:inputType="textAutoComplete|textMultiLine"
+                android:hint="Введите текст для перевода" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/OutputTextView"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_height="wrap_content"
+                android:minHeight="192dp"
+                android:layout_width="64dp">
+
+                <ImageButton
+                    android:text="Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_menu_copy_holo_light"
+                    android:id="@+id/buttonCopy"
+                    android:onClick="OnClick_buttonCopytext" />
+
+                <ImageButton
+                    android:text="Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_menu_share_holo_light"
+                    android:id="@+id/buttonShare"
+                    android:onClick="OnClick_ButtonShare" />
+
+                <ImageButton
+                    android:id="@+id/buttonAddToFavorite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_star_big_off"
+                    android:onClick="OnClick_AddToFavorite" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/separator_bottom"
+            android:dividerPadding="3dp"
+            android:showDividers="middle">
+
+            <Button
+                android:id="@+id/buttonTranslate"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryDark"
+                android:text="Переводчик"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/buttonStar"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="OnClick_ActivityFavorite"
+                android:text="Избранное"
+                android:textColor="#00b0e4"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/buttonSetting"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Настройки"
+                android:textColor="#00b0e4"
+                android:textSize="12sp"
+                android:onClick="OnClick_ActivitySetting"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
